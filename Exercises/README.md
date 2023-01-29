@@ -7,3 +7,4 @@
 6. Create an array of size 50, with random generated numbers  
 7. Implement the bubble sort algorithm  on your array  
 8. Create a file and save some data to it  
+9. Implement merge sort  
