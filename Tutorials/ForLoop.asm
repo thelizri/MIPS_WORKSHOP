@@ -1,5 +1,5 @@
 .text
-li $t0, 0 			#i=0
+li $t0, 0 			#We intialize our loop counter to zero. i=0
 forLoop:			#Create a label for the for loop. 
 #Place code between here
 #This code prints 'Hello world\n'. Replace with your code. 
