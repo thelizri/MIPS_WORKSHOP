@@ -3,9 +3,10 @@
 2. Use of simple control structures. **if** statements, **if-else** statements
 2. How to create a **For Loop**  
 3. How to create a **Method/Function**  
-4. How to access/manage memory
-5. How to access methods from another file
-6. How to look up syscalls and instructions
+4. How to create a **Macro**
+5. How to access/manage memory
+6. How to access methods from another file
+7. How to look up syscalls and instructions
 
 
 ## MARS Simulator Tips
