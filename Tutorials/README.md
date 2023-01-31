@@ -8,5 +8,6 @@
 6. How to look up syscalls and instructions
 
 
+## MARS Simulator Tips
 The mars simulator has a list of instructions, pseudo-instructions, and syscalls.  
 You can either press F1, or press help in the navigation bar.
