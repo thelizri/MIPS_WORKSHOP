@@ -1,42 +1,32 @@
+#Stack grows downwards.
+#Heap grows upwards. 
+#If we're calling a subprogram within a subprogram, we need to push
+#$ra to the stack. So we don't overwrite our return address
 	.text
 main:
-	# Get input value and store it in $s0
-	la $a0, prompt
+	jal GoodSubprogram
+	nop
+	la $a0, string3
 	jal PrintString
 	nop
-	jal ReadInteger
+	jal Exit
 	nop
-	move $s0, $v0
-	# Load constants a, b, and c into registers
-	lw $t5, a
-	lw $t6, b
-	lw $t7, c
-	# Calculate the result of y=a*x*x + b * x + c and store it.
-	mul $t0, $s0, $s0
-	mul $t0, $t0, $t5
-	mul $t1, $s0, $t6
-	add $t0, $t0, $t1
-	add $s1, $t0, $t7
-	# Store the result from $s1 to y.
-	sw $s1, y
-	# Print output from memory y
-	jal PrintNewline
-	nop
-	la $a0, result
+GoodSubprogram:
+	addi $sp, $sp, -4 # save space on the stack (push) for the $ra
+	sw $ra, 0($sp) # save $ra
+	la $a0, string1
 	jal PrintString
 	nop
-	lw $a0, y
-	jal PrintInteger
-	nop
-
-#Exit program
-jal Exit
-
+	li $v0, 4
+	la $a0, string2
+	syscall
+	lw $ra, 0($sp) # restore $ra
+	addi $sp, $sp, 4 # return the space on the stack (pop)
+	jr $ra
+	
 	.data
-a: .word 5
-b: .word 2
-c: .word 3
-y: .word 0
-prompt: .asciiz "Enter a value for x: "
-result: .asciiz "The result is: "
+string1: .asciiz "\nIn subprogram GoodExample\n"
+string2: .asciiz "After call to PrintString\n"
+string3: .asciiz "After call to GoodExample\n"
+
 .include "utils.asm"
