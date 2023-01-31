@@ -1,6 +1,4 @@
-.data
-myArray: .space 12 #reserving space for 12 bytes, in other words 3 integers
-.text
+	.text
 addi $s0, $zero, 4
 addi $s1, $zero, 10
 addi $s2, $zero, 20
@@ -14,5 +12,8 @@ addi $v0, $zero, 1
 syscall
 
 exit:
-addi $v0, $zero, 10
-syscall
+	addi $v0, $zero, 10
+	syscall
+
+	.data
+myArray: .space 12 #reserving space for 12 bytes, in other words 3 integers
