@@ -4,7 +4,7 @@
 .end_macro
 .macro PrintInt
     li      $v0, 1      # System call code for print_int
-    syscall 		# Invoke print_int
+    syscall         # Invoke print_int
 .end_macro
 .macro NewLine
     li      $v0, 4        # System call code for print_str
@@ -25,11 +25,11 @@ main:
     syscall             # Read integer from user and store in $v0
 
     move    $t0, $v0    # Copy user input into $t0
-	
+    
     li      $v0, 41     # System call code for random int
     syscall             # Generate random number and store in $v0
     
-    move    $t1, $v0    # Copy random number into $t1
+    move    $t1, $a0    # Copy random number into $t1
     
     la $a0, random
     PrintString
