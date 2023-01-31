@@ -35,10 +35,10 @@ addresses is not useable by a program.
 code representation of the program is stored. Each instruction is stored as a word (32 bits  
 or 4 byte) in this memory. All instructions fall on a word boundary, which is a multiple  
 of 4 (0x0040 0000, 0x0040 0004, 0x0040 0080, 0x0040 00B0, etc).  
-- **Static data** - (Addresses 0x1001 0000 - 0x1004 0000) Static data is defined using 
-the .data assembler directive. The size of the elements in this section are assigned  
-when the program is created (assembled and linked), and cannot change during the  
-execution of the program.  
+- **Static data** - (Addresses 0x1001 0000 - 0x1004 0000) Static data is defined using   
+the .data assembler directive. The size of the elements in this section are assigned   
+when the program is created (assembled and linked), and cannot change during the   
+execution of the program.   
 - **Heap** - (Addresses 0x1004 0000 - until stack data is reached, grows upward) Heap is  
 dynamic data which is allocated on an as-needed basis at run time. How this memory is allocated  
 and reclaimed is language specific. Data in heap is always globally available.  
