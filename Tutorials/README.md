@@ -50,4 +50,3 @@ assembled.
 - **Kernel** - (Addresses 0x9000 0000 - 0xffff 0000) - Kernel memory is used by the  
 operating system, and so is not accessible to the user.
 
-![This is an image](https://github.com/thelizri/MIPS_WORKSHOP/edit/main/Tutorials/MIPS_Architecture.PNG)
