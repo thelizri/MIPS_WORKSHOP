@@ -16,7 +16,7 @@
     syscall               # Invoke print_str# Invoke print_int
 .end_macro
 
-.text
+    .text
 main:
     la      $a0, prompt # Load address of prompt string into $a0
     PrintString
@@ -33,7 +33,7 @@ main:
     
     la $a0, random
     PrintString
-    move $a0, $t1 #Copy random number into $a0 för printing
+    move $a0, $t1 #Copy random number into $a0 fÃ¶r printing
     PrintInt
     NewLine
 
@@ -48,7 +48,7 @@ main:
     li      $v0, 10     # System call code for exit
     syscall             # Exit program
 
-.data
+    .data
 newline: .asciiz "\n"
 random: .asciiz "Your random number is: "
 prompt: .asciiz "Enter a number: "
