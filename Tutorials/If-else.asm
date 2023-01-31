@@ -1,8 +1,7 @@
 	.text
-
-	lw $t0, num
-	sgt $t1, $t0, $zero #Boolean: (num > 0). If $t0 is greater than $zero, $t1 is set to 1. If it's not, it is set to 0.
-	beqz $t1, else #Will branch if $t1 equals zero.
+lw $t0, num
+sgt $t1, $t0, $zero #Boolean: (num > 0). If $t0 is greater than $zero, $t1 is set to 1. If it's not, it is set to 0.
+beqz $t1, else #Will branch if $t1 equals zero.
 if:	#if block
 	la $a0, PositiveNumber
 	jal PrintString
