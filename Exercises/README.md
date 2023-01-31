@@ -5,3 +5,4 @@
 4. Print out the first 20 Fibonnaci numbers
 5. Find the sum of all even Fibonacci numbers whose value does not exceed four million
 6. Print out all prime numbers lower than 200
+7. Create an array with random numbers. And implement merge sort, to sort it.  
