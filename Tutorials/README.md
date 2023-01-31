@@ -23,3 +23,25 @@ Step 4. Retrieve return values, if any, from result registers as specified.
 $gp - is a pointer to the global memory. Used with heap allocations.  
 $sp - is the stack pointer. Used to keep track of the beginning of the data for this method.  
 $ra - return address: a pointer to the address to use when returning from a method/function.  
+
+## Types of Memory
+- **Reserved** - This is memory which is reserved for the MIPS platform. Memory at these  
+addresses is not useable by a program.  
+- **Program text** - (Addresses 0x0040 0000 - 0x1000 00000) This is where the machine  
+code representation of the program is stored. Each instruction is stored as a word (32 bits  
+or 4 byte) in this memory. All instructions fall on a word boundary, which is a multiple  
+of 4 (0x0040 0000, 0x0040 0004, 0x0040 0080, 0x0040 00B0, etc).  
+- **Static data** - (Addresses 0x1001 0000 - 0x1004 0000) This is data which will come from  
+the data segment of the program. The size of the elements in this section are assigned  
+when the program is created (assembled and linked), and cannot change during the  
+execution of the program.  
+- **Heap** - (Addresses 0x1004 0000 - until stack data is reached, grows upward) Heap is  
+dynamic data which is allocated on an as-needed basis at run time. How this memory is allocated  
+and reclaimed is language specific. Data in heap is always globally available.  
+- **Stack** – (Addresses 0x7fff fe00 - until heap data is reached, grows downward) The  
+program stack is dynamic data allocated for subprograms via push and pop operations.  
+All method local variables are stored here. Because of the nature of the push and pop  
+operations, the size of the stack record to create must be known when the program is  
+assembled.
+- **Kernel** - (Addresses 0x9000 0000 - 0xffff 0000) - Kernel memory is used by the  
+operating system, and so is not accessible to the user.
