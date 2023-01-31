@@ -11,7 +11,7 @@ main:
 	lw $t5, a
 	lw $t6, b
 	lw $t7, c
-	# Calculate the result of y=a*x*x + b * x + c and store it.
+	# Calculate the result of y=a * x * x + b * x + c and store it.
 	mul $t0, $s0, $s0
 	mul $t0, $t0, $t5
 	mul $t1, $s0, $t6
@@ -28,10 +28,10 @@ main:
 	lw $a0, y
 	jal PrintInteger
 	nop
-
-#Exit program
-jal Exit
-
+	
+	#Exit program
+	jal Exit
+	
 	.data
 a: .word 5
 b: .word 2
@@ -39,4 +39,4 @@ c: .word 3
 y: .word 0
 prompt: .asciiz "Enter a value for x: "
 result: .asciiz "The result is: "
-.include "utils.asm"
+	.include "utils.asm"

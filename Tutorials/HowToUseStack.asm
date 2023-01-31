@@ -1,7 +1,7 @@
-#Stack grows downwards.
-#Heap grows upwards. 
-#If we're calling a subprogram within a subprogram, we need to push
-#$ra to the stack. So we don't overwrite our return address
+	#Stack grows downwards.
+	#Heap grows upwards.
+	#If we're calling a subprogram within a subprogram, we need to push
+	#$ra to the stack. So we don't overwrite our return address
 	.text
 main:
 	jal GoodSubprogram
@@ -12,7 +12,7 @@ main:
 	jal Exit
 	nop
 GoodSubprogram:
-	addi $sp, $sp, -4 # save space on the stack (push) for the $ra
+	addi $sp, $sp, - 4 # save space on the stack (push) for the $ra
 	sw $ra, 0($sp) # save $ra
 	la $a0, string1
 	jal PrintString
@@ -28,5 +28,5 @@ GoodSubprogram:
 string1: .asciiz "\nIn subprogram GoodExample\n"
 string2: .asciiz "After call to PrintString\n"
 string3: .asciiz "After call to GoodExample\n"
-
-.include "utils.asm"
+	
+	.include "utils.asm"
