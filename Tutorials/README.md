@@ -24,6 +24,10 @@ $gp - is a pointer to the global memory. Used with heap allocations.
 $sp - is the stack pointer. Used to keep track of the beginning of the data for this method.  
 $ra - return address: a pointer to the address to use when returning from a method/function.  
 
+## Calling subprograms  
+**jal Label** will jump to specified label, and add the address of the next row to the **$ra** register.  
+At then end of our subprogram we write: **jr $ra**. It will transfer us back to our return address.
+
 ## Types of Memory
 - **Reserved** - This is memory which is reserved for the MIPS platform. Memory at these  
 addresses is not useable by a program.  
@@ -31,8 +35,8 @@ addresses is not useable by a program.
 code representation of the program is stored. Each instruction is stored as a word (32 bits  
 or 4 byte) in this memory. All instructions fall on a word boundary, which is a multiple  
 of 4 (0x0040 0000, 0x0040 0004, 0x0040 0080, 0x0040 00B0, etc).  
-- **Static data** - (Addresses 0x1001 0000 - 0x1004 0000) This is data which will come from  
-the data segment of the program. The size of the elements in this section are assigned  
+- **Static data** - (Addresses 0x1001 0000 - 0x1004 0000) Static data is defined using 
+the .data assembler directive. The size of the elements in this section are assigned  
 when the program is created (assembled and linked), and cannot change during the  
 execution of the program.  
 - **Heap** - (Addresses 0x1004 0000 - until stack data is reached, grows upward) Heap is  
@@ -45,3 +49,5 @@ operations, the size of the stack record to create must be known when the progra
 assembled.
 - **Kernel** - (Addresses 0x9000 0000 - 0xffff 0000) - Kernel memory is used by the  
 operating system, and so is not accessible to the user.
+
+
