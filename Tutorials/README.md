@@ -11,3 +11,9 @@
 ## MARS Simulator Tips
 The mars simulator has a list of instructions, pseudo-instructions, and syscalls.  
 You can either press F1, or press help in the navigation bar.
+
+## Syscalls
+Step 1. Load the service number in register $v0.  
+Step 2. Load argument values, if any, in $a0, $a1, $a2, or $f12 as specified.  
+Step 3. Issue the SYSCALL instruction.  
+Step 4. Retrieve return values, if any, from result registers as specified.  
