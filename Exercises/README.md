@@ -8,6 +8,3 @@
 7. Create an array with random numbers. And implement merge sort, to sort it.  
 8. Use the bitmap display to print out a moving object you can control with your keys.  
 9. Solve the first Advent of Code question (year 2022) in MIPS.
-
-### This website has a lot of easy programming problems to you can solve in MIPS
-[Project Euler](https://projecteuler.net/)
