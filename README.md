@@ -6,3 +6,4 @@ Youtube Playlist:    [MIPS Assembly Programming Simplified](https://youtube.com/
 [Small videogame in MIPS](https://youtu.be/yuREScvud_I)  
 [Snake in MIPS](https://youtu.be/CdctMQjk3JI)  
 [Shining Stars in MIPS](https://youtu.be/vpd9CNDn-go)  
+[Good Site to Find Easy Programming Problems to Practice On](https://projecteuler.net/)
