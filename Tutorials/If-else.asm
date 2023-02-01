@@ -17,7 +17,7 @@ end_if:
 	nop
 	
 	.data
-num: .word - 5
+num: .word -5
 PositiveNumber: .asciiz "Number is positive"
 NegativeNumber: .asciiz "Number is negative"
 	

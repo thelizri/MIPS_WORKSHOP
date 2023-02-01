@@ -12,7 +12,7 @@ end_if:
 	nop
 	
 	.data
-num: .word - 9
+num: .word -9
 PositiveNumber: .asciiz "Number is positive"
 	
 	.include "utils.asm" #Imports functions from our utils.asm file
