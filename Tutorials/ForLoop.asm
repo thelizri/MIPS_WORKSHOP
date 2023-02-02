@@ -12,7 +12,7 @@ forLoop: #Create a label for the for loop.
 	syscall
 	#Place code between here
 	addi LOOP_COUNTER, LOOP_COUNTER, 1 #Increment our loop counter by 1 
-	blt LOOP_COUNTER, 5, forLoop #go to forLoop if i<10
+	blt LOOP_COUNTER, 10, forLoop #go to forLoop if i<10
 	
 	li $v0, SYS_EXIT #Syscall to exit
 	syscall
